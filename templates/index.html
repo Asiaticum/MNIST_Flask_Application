@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <!-- BootstrapのCSS読み込み -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <!-- jQuery読み込み -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <!-- BootstrapのJS読み込み -->
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        {% if result %}
+          <img src="{{filepath}}" width="128" height="128" alt="mnist"> 認識結果は {{result}} (確率: {{proba}}%)です。<BR>
+          <HR>
+        {% endif %}
+        ファイルを選択して送信してください<BR>
+        <form action = "./" method = "POST"
+           enctype = "multipart/form-data">
+           <input type = "file" name = "file" />
+           <input type = "submit" type="button" class="btn btn-primary"/>
+        </form>
+     </body>
+</html>
